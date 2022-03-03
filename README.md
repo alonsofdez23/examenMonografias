@@ -17,9 +17,21 @@ Se pide:
 
 2. (1,5 puntos) Crear el CRUD de monografías.
 3. (1 punto) Permitir el acceso al CRUD de monografías únicamente al usuario admin.
-4. (2 puntos) En la ruta `GET monografias/{monografia}`, mostrar también los títulos de los artículos que componen la monografía, indicando además la longitud total de la monografía, calculada como la suma del número de páginas de todos sus artículos.
-5. (2 puntos) En la ruta `GET articulos`, mostrar una columna con el número de autores que tiene cada artículo y otra con el número de monografías en las que aparece cada artículo.
-6. (2 puntos) Crear la ruta `GET monografias/{monografia}/autores`, que muestre el título de la monografía indicada y el nombre de todos los autores que han participado en esa monografía.
+4. (2 puntos) En la ruta `GET` `monografias/{monografia}`, mostrar también los títulos de los artículos que componen la monografía, indicando además la longitud total de la monografía, calculada como la suma del número de páginas de todos sus artículos.
+5. (2 puntos) En la ruta `GET` `articulos`, mostrar una columna con el número de autores que tiene cada artículo y otra con el número de monografías en las que aparece cada artículo.
+6. (2 puntos) Crear la ruta `GET` `monografias/{monografia}/autores`, que muestre el título de la monografía indicada y el nombre de todos los autores que han participado en esa monografía.
+
+### TABLAS
+
+   - monographs (id, title, year)
+
+   - authors (id, name)
+
+   - articles (id, title, year, number_pages)
+
+   - article_monograph (article_id, monograph_id)
+   
+   - article_author (article_id, author_id)
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
