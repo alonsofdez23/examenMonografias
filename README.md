@@ -21,17 +21,17 @@ Se pide:
 5. (2 puntos) En la ruta `GET` `articulos`, mostrar una columna con el número de autores que tiene cada artículo y otra con el número de monografías en las que aparece cada artículo.
 6. (2 puntos) Crear la ruta `GET` `monografias/{monografia}/autores`, que muestre el título de la monografía indicada y el nombre de todos los autores que han participado en esa monografía.
 
-### TABLAS
+## TABLAS
 
-   - monographs (id, title, year)
+   - *monographs (**id**, title, year)*
 
-   - authors (id, name)
+   - *authors (**id**, name)*
 
-   - articles (id, title, year, number_pages)
+   - *articles (**id**, title, year, number_pages)*
 
-   - article_monograph (article_id, monograph_id)
+   - *article_monograph (**article_id, monograph_id**)*
    
-   - article_author (article_id, author_id)
+   - *article_author (**article_id, author_id**)*
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
