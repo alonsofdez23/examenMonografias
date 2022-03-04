@@ -29,7 +29,9 @@ class MonographController extends Controller
      */
     public function create()
     {
-        //
+        return view('monographs.create', [
+            'monograph' => new Monograph(),
+        ]);
     }
 
     /**
@@ -40,7 +42,12 @@ class MonographController extends Controller
      */
     public function store(StoreMonographRequest $request)
     {
-        //
+        $validated = $request->validated();
+        $monograph = new Monograph($validated);
+        $monograph->save();
+
+        return redirect()->route('monographs.store')
+            ->with('success', "Monografía $monograph->title creada correctamente!");
     }
 
     /**
