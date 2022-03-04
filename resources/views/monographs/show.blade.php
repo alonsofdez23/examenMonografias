@@ -19,7 +19,11 @@
                                 <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $article->title }}</p>
                                 @endforeach
 
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Numero total de páginas de todos los artículos: <span class="font-bold">{{ $monograph_articles->articles_sum_number_pages }}</span></p>
+                                @if ($monograph_articles->articles->count() == 0)
+                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Esta monografía no contiene artículos</p>
+                                @else
+                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Numero total de páginas de todos los artículos: <span class="font-bold">{{ $monograph_articles->articles_sum_number_pages }}</span></p>
+                                @endif
                             </div>
                         </div>
                     </div>
