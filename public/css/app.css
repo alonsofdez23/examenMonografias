@@ -1089,6 +1089,9 @@ select {
 .font-normal {
   font-weight: 400;
 }
+.font-thin {
+  font-weight: 100;
+}
 .uppercase {
   text-transform: uppercase;
 }

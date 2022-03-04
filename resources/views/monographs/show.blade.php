@@ -12,8 +12,14 @@
                     <div class="flex flex-col items-center mt-4">
                         <div class="flex flex-col items-center md:flex-row md:max-w-xl">
                             <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $monograph->title }}</h5>
-                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $monograph->year }}</p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{{ $monograph_articles->title }}</h5>
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $monograph_articles->year }}</p>
+
+                                @foreach ($monograph_articles->articles as $article)
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $article->title }}</p>
+                                @endforeach
+
+                                <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Numero total de páginas de todos los artículos: <span class="font-bold">{{ $monograph_articles->articles_sum_number_pages }}</span></p>
                             </div>
                         </div>
                     </div>
