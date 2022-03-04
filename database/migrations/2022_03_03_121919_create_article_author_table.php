@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('article_author', function (Blueprint $table) {
             $table->foreignId('article_id')->constrained();
             $table->foreignId('author_id')->constrained();
+            $table->primary(['article_id', 'author_id']);
         });
     }
 

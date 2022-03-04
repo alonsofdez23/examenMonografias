@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('article_monograph', function (Blueprint $table) {
             $table->foreignId('article_id')->constrained();
             $table->foreignId('monograph_id')->constrained();
+            $table->primary(['article_id', 'monograph_id']);
         });
     }
 
