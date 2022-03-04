@@ -71,7 +71,9 @@ class MonographController extends Controller
      */
     public function edit(Monograph $monograph)
     {
-        //
+        return view('monographs.edit', [
+            'monograph' => $monograph,
+        ]);
     }
 
     /**
@@ -83,7 +85,13 @@ class MonographController extends Controller
      */
     public function update(UpdateMonographRequest $request, Monograph $monograph)
     {
-        //
+        $validated = $request->validated();
+        $monograph->title = $validated['title'];
+        $monograph->year = $validated['year'];
+        $monograph->save();
+
+        return redirect()->route('monographs.index')
+            ->with('success', "Monografía $monograph->title editada correctamente!");
     }
 
     /**
