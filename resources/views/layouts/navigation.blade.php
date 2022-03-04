@@ -19,6 +19,9 @@
                     <x-nav-link :href="route('monographs.index')" :active="request()->routeIs('monographs.index')">
                         {{ __('Monografias') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('monographs.create')" :active="request()->routeIs('monographs.create')">
+                        {{ __('Crear monografia') }}
+                    </x-nav-link>
                     @endif
                 </div>
             </div>

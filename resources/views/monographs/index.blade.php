@@ -69,9 +69,6 @@
                                 </div>
                             </div>
                         @endif
-                        <form action="{{ route('monographs.create') }}" method="GET">
-                            <button class="py-1 px-4 text-gray-700 hover:text-white border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded text-sm text-center mr-2 mb-2 dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Crear monografía</button>
-                        </form>
                     </div>
                 </div>
             </div>

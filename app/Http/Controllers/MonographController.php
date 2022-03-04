@@ -51,7 +51,9 @@ class MonographController extends Controller
      */
     public function show(Monograph $monograph)
     {
-        //
+        return view('monographs.show', [
+            'monograph' => $monograph,
+        ]);
     }
 
     /**
