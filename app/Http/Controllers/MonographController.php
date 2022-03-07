@@ -102,7 +102,9 @@ class MonographController extends Controller
      */
     public function destroy(Monograph $monograph)
     {
-        if ($monograph->articles()->count() == 0) {
+        if ($monograph->articles->isEmpty()) {
+            $monograph->delete();
+
             return redirect()->route('monographs.index')
                 ->with('success', "Monografía $monograph->title borrado correctamente!");
         };
