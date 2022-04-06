@@ -30,6 +30,8 @@ Route::get('/articles', [ArticleController::class, 'index'])
     ->middleware(['auth'])
     ->name('articles');
 
-Route::get('/monographs/{monograph}/authors', [MonographController::class, 'authors']);
+Route::get('/monographs/{monograph}/authors', [MonographController::class, 'authors'])
+    ->name('authors')
+    ->middleware('auth');
 
 require __DIR__.'/auth.php';

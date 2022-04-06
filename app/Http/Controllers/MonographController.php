@@ -112,4 +112,11 @@ class MonographController extends Controller
         return redirect()->route('monographs.index')
             ->with('error', "$monograph->title tiene asociado artículos");
     }
+
+    public function authors(Monograph $monograph)
+    {
+        return view('monographs.authors', [
+            'monograph' => $monograph,
+        ]);
+    }
 }
