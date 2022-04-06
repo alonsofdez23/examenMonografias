@@ -27,7 +27,8 @@ Route::resource('monographs', MonographController::class)
     ->middleware(['auth', 'can:see-monographs']);
 
 Route::get('/articles', [ArticleController::class, 'index'])
-    ->middleware(['auth']);
+    ->middleware(['auth'])
+    ->name('articles');
 
 Route::get('/monographs/{monograph}/authors', [MonographController::class, 'authors']);
 

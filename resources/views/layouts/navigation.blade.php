@@ -22,6 +22,9 @@
                     <x-nav-link :href="route('monographs.create')" :active="request()->routeIs('monographs.create')">
                         {{ __('Crear monografia') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
+                        {{ __('Artículos') }}
+                    </x-nav-link>
                     @endif
                 </div>
             </div>
@@ -74,6 +77,17 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            @if (Auth::user()->name == 'admin')
+            <x-responsive-nav-link :href="route('monographs.index')" :active="request()->routeIs('monographs.index')">
+                {{ __('Monografias') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('monographs.create')" :active="request()->routeIs('monographs.create')">
+                {{ __('Crear monografia') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
+                {{ __('Artículos') }}
+            </x-responsive-nav-link>
+            @endif
         </div>
 
         <!-- Responsive Settings Options -->

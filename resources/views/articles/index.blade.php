@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Artículos') }}
         </h2>
     </x-slot>
     <div class="py-6">
@@ -60,7 +60,7 @@
                                 </table>
                                 @else
                                 <div class="bg-green-100 rounded-lg p-4 mt-4 mb-4 text-sm text-green-700 w-96 text-center" role="alert">
-                                    No hay monografías.
+                                    No hay artículos.
                                 </div>
                             </div>
                         @endif
