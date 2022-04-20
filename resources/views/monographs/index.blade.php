@@ -50,6 +50,9 @@
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4 inline-flex">
+                                                    <form action="{{ route('authors', $monograph->id) }}" method="GET">
+                                                        <button class="py-1 px-4 text-gray-700 hover:text-white border border-gray-700 hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 font-medium rounded text-sm text-center mr-2 mb-2 dark:border-gray-500 dark:text-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">Autores</button>
+                                                    </form>
                                                     <form action="{{ route('monographs.edit', $monograph->id) }}" method="GET">
                                                         <button class="py-1 px-4 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded text-sm text-center mr-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-600 dark:focus:ring-blue-800">Editar</button>
                                                     </form>
