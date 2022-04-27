@@ -25,7 +25,7 @@ class StoreMonographRequest extends FormRequest
     {
         return [
             'title' => 'required|string',
-            'year' => 'required|numeric',
+            'year' => 'required|numeric|digits:4',
         ];
     }
 }

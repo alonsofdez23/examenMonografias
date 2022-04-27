@@ -86,8 +86,10 @@ class MonographController extends Controller
     public function update(UpdateMonographRequest $request, Monograph $monograph)
     {
         $validated = $request->validated();
-        $monograph->title = $validated['title'];
-        $monograph->year = $validated['year'];
+        // $monograph->title = $validated['title'];
+        // $monograph->year = $validated['year'];
+        $monograph->fill($validated);
+
         $monograph->save();
 
         return redirect()->route('monographs.index')
