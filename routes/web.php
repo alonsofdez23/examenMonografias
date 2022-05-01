@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\ArticuloController;
+use App\Http\Controllers\MonografiaController;
 use App\Http\Controllers\MonographController;
+use App\Models\Monografia;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,15 +26,15 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::resource('monographs', MonographController::class)
-    ->middleware(['auth', 'can:see-monographs']);
+Route::resource('/monografias', MonografiaController::class)
+    ->middleware(['auth', 'can:solo-admin']);
 
-Route::get('/articles', [ArticleController::class, 'index'])
+Route::get('/articulos', [ArticuloController::class, 'index'])
     ->middleware(['auth'])
-    ->name('articles');
+    ->name('articulos');
 
-Route::get('/monographs/{monograph}/authors', [MonographController::class, 'authors'])
-    ->name('authors')
+Route::get('/monografias/{monografia}/autores', [MonografiaController::class, 'autores'])
+    ->name('autores')
     ->middleware('auth');
 
 require __DIR__.'/auth.php';

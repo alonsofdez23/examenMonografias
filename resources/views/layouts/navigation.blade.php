@@ -16,13 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                     @if (Auth::user()->name == 'admin')
-                    <x-nav-link :href="route('monographs.index')" :active="request()->routeIs('monographs.index')">
+                    <x-nav-link :href="route('monografias.index')" :active="request()->routeIs('monografias.index')">
                         {{ __('Monografias') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('monographs.create')" :active="request()->routeIs('monographs.create')">
+                    <x-nav-link :href="route('monografias.create')" :active="request()->routeIs('monografias.create')">
                         {{ __('Crear monografia') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
+                    <x-nav-link :href="route('articulos')" :active="request()->routeIs('articulos')">
                         {{ __('Artículos') }}
                     </x-nav-link>
                     @endif
@@ -78,13 +78,13 @@
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
             @if (Auth::user()->name == 'admin')
-            <x-responsive-nav-link :href="route('monographs.index')" :active="request()->routeIs('monographs.index')">
+            <x-responsive-nav-link :href="route('monografias.index')" :active="request()->routeIs('monografias.index')">
                 {{ __('Monografias') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('monographs.create')" :active="request()->routeIs('monographs.create')">
+            <x-responsive-nav-link :href="route('monografias.create')" :active="request()->routeIs('monografias.create')">
                 {{ __('Crear monografia') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('articles')" :active="request()->routeIs('articles')">
+            <x-responsive-nav-link :href="route('articulos')" :active="request()->routeIs('articulos')">
                 {{ __('Artículos') }}
             </x-responsive-nav-link>
             @endif

@@ -27,10 +27,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        Gate::define('see-monographs', function(User $user) {
+        Gate::define('solo-admin', function (User $user) {
             return $user->name == 'admin'
                 ? Response::allow()
-                : Response::deny('Debes ser administrador.');
+                : Response::deny('Debes ser administrador');
         });
     }
 }

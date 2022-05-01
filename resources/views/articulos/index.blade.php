@@ -22,7 +22,7 @@
                             </div>
                         @endif
 
-                        @if ($articles->isNotEmpty())
+                        @if ($articulos->isNotEmpty())
                             <div class="border border-gray-200 shadow">
                                 <table class="min-w-full divide-y divide-gray-200">
                                     <thead class="bg-gray-50">
@@ -33,25 +33,25 @@
                                     </tr>
                                     </thead>
                                     <tbody class="bg-white">
-                                        @foreach ($articles as $article)
+                                        @foreach ($articulos as $articulo)
                                             <tr class="whitespace-nowrap">
                                                 <td class="px-6 py-4">
                                                     <div class="text-sm font-medium text-gray-900">
-                                                        <p>{{ $article->title }}</p>
+                                                        <p>{{ $articulo->titulo }}</p>
                                                     </div>
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    @if ($article->authors_count == 0)
+                                                    @if ($articulo->autores_count == 0)
                                                         Este artículo no tiene autor
                                                     @else
-                                                        {{ $article->authors_count }}
+                                                        {{ $articulo->autores_count }}
                                                     @endif
                                                 </td>
                                                 <td class="px-6 py-4">
-                                                    @if ($article->monographs_count == 0)
+                                                    @if ($articulo->monografias_count == 0)
                                                         Este artículo no tiene monografías
                                                     @else
-                                                        {{ $article->monographs_count }}
+                                                        {{ $articulo->monografias_count }}
                                                     @endif
                                                 </td>
                                             </tr>

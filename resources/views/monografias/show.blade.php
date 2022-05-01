@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Monografía {{ $monograph_articles->title }}
+            Monografía {{ $monografia->titulo }}
         </h2>
     </x-slot>
 
@@ -12,17 +12,17 @@
                     <div class="flex flex-col items-center mt-4">
                         <div class="flex flex-col items-center md:flex-row md:max-w-xl">
                             <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $monograph_articles->title }}</h5>
-                                <p class="mb-3 font-normal text-gray-700">{{ $monograph_articles->year }}</p>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ $monografia->titulo }}</h5>
+                                <p class="mb-3 font-normal text-gray-700">{{ $monografia->anyo }}</p>
 
-                                @foreach ($monograph_articles->articles as $article)
-                                <p class="mb-3 font-normal text-gray-700">{{ $article->title }}</p>
+                                @foreach ($monografia->articulos as $articulo)
+                                <p class="mb-3 font-normal text-gray-700">{{ $articulo->titulo }}</p>
                                 @endforeach
 
-                                @if ($monograph_articles->articles->count() == 0)
+                                @if ($monografia->articulos->count() == 0)
                                     <p class="mb-3 font-normal text-gray-700">Esta monografía no contiene artículos</p>
                                 @else
-                                    <p class="mb-3 font-normal text-gray-700">Numero total de páginas de todos los artículos: <span class="font-bold">{{ $monograph_articles->articles_sum_number_pages }}</span></p>
+                                    <p class="mb-3 font-normal text-gray-700">Numero total de páginas de todos los artículos: <span class="font-bold">{{ $monografia->articulos_sum_num_paginas }}</span></p>
                                 @endif
                             </div>
                         </div>

@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Editar Monografía') }}
+            {{ __('Crear Monografía') }}
         </h2>
     </x-slot>
 
@@ -10,38 +10,38 @@
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200 flex flex-col items-center">
                     <div class="flex flex-col items-center mt-4">
-                        <form method="POST" action="{{ route('monographs.update', $monograph->id) }}">
+                        <form method="POST" action="{{ route('monografias.store') }}">
                             @csrf
-                            @method('PUT')
+                            @method('POST')
 
                             <div>
-                                <x-label for="title" value="Título" />
+                                <x-label for="titulo" value="Título" />
 
                                 <x-input
-                                id="title"
+                                id="titulo"
                                 class="block mt-1 w-full"
                                 type="text"
-                                name="title"
+                                name="titulo"
                                 placeholder="Título"
-                                value="{{ old('title', $monograph->title) }}"
+                                value="{{ old('titulo') }}"
                                 autofocus />
-                                @error('title')
+                                @error('titulo')
                                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                                         {{ $message }}
                                     </span>
                                 @enderror
                             </div>
                             <div>
-                                <x-label for="year" value="Año" />
+                                <x-label for="anyo" value="Año" />
 
                                 <x-input
-                                id="year"
+                                id="anyo"
                                 class="block mt-1 w-full"
                                 type="text"
-                                name="year"
+                                name="anyo"
                                 placeholder="Año"
-                                value="{{ old('year', $monograph->year) }}" />
-                                @error('year')
+                                value="{{ old('anyo') }}" />
+                                @error('anyo')
                                     <span class="flex items-center font-medium tracking-wide text-red-500 text-xs mt-1 ml-1">
                                         {{ $message }}
                                     </span>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMonografiaRequest;
 use App\Http\Requests\UpdateMonografiaRequest;
 use App\Models\Monografia;
+use App\Models\Monograph;
 
 class MonografiaController extends Controller
 {
@@ -15,7 +16,9 @@ class MonografiaController extends Controller
      */
     public function index()
     {
-        //
+        return view('monografias.index', [
+            'monografias' => Monografia::all(),
+        ]);
     }
 
     /**
@@ -25,7 +28,9 @@ class MonografiaController extends Controller
      */
     public function create()
     {
-        //
+        return view('monografias.create', [
+            'monografia' => new Monografia(),
+        ]);
     }
 
     /**
@@ -36,7 +41,11 @@ class MonografiaController extends Controller
      */
     public function store(StoreMonografiaRequest $request)
     {
-        //
+        $monografia = new Monografia($request->validated());
+        $monografia->save();
+
+        return redirect()->route('monografias.index')
+            ->with('success', "Monografía $monografia->titulo creada correctamente!");
     }
 
     /**
@@ -47,7 +56,9 @@ class MonografiaController extends Controller
      */
     public function show(Monografia $monografia)
     {
-        //
+        return view('monografias.show', [
+            'monografia' => $monografia->withSum('articulos', 'num_paginas')->first(),
+        ]);
     }
 
     /**
@@ -58,7 +69,9 @@ class MonografiaController extends Controller
      */
     public function edit(Monografia $monografia)
     {
-        //
+        return view('monografias.edit', [
+            'monografia' => $monografia,
+        ]);
     }
 
     /**
@@ -70,7 +83,11 @@ class MonografiaController extends Controller
      */
     public function update(UpdateMonografiaRequest $request, Monografia $monografia)
     {
-        //
+        $monografia->fill($request->validated());
+        $monografia->save();
+
+        return redirect()->route('monografias.index')
+            ->with('success', "Monografía $monografia->titulo editada correctamente!");
     }
 
     /**
@@ -81,6 +98,17 @@ class MonografiaController extends Controller
      */
     public function destroy(Monografia $monografia)
     {
-        //
+        $monografia->articulos()->detach();
+        $monografia->delete();
+
+        return redirect()->route('monografias.index')
+            ->with('success', "Monografía $monografia->titulo borrado correctamente!");
+    }
+
+    public function autores(Monografia $monografia)
+    {
+        return view('monografias.autores', [
+            'monografia' => $monografia,
+        ]);
     }
 }

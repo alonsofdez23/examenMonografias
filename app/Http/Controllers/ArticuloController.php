@@ -15,7 +15,11 @@ class ArticuloController extends Controller
      */
     public function index()
     {
-        //
+        $articulos = Articulo::withCount('monografias', 'autores')->get();
+
+        return view('articulos.index', [
+            'articulos' => $articulos,
+        ]);
     }
 
     /**

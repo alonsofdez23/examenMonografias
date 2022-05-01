@@ -25,4 +25,15 @@ class Monografia extends Model
     {
         return $this->belongsToMany(Articulo::class);
     }
+
+    public function autores()
+    {
+        $col = collect();
+
+        foreach ($this->articulos as $articulo) {
+            $col = $col->merge($articulo->autores);
+        }
+
+        return $col->unique('id');
+    }
 }
