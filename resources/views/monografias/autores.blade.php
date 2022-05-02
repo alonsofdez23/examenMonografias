@@ -12,10 +12,10 @@
                     <div class="flex flex-col items-center mt-4">
                         <div class="flex flex-col items-center md:flex-row md:max-w-xl">
                             <div class="flex flex-col justify-between p-4 leading-normal">
-                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Autores que han participado en la monografía {{ $monografia->titulo }}</h5>
+                                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">Autores que han participado en la monografía {{ $monografia->titulo }}</h5>
 
                                 @foreach ($monografia->autores() as $autor)
-                                    <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $autor->nombre }}</p>
+                                    <p class="mb-3 font-normal text-gray-700">{{ $autor->nombre }}</p>
                                 @endforeach
 
                             </div>
